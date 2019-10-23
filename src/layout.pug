@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+- var discord_link = "https://discord.gg/nQhzKes"
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        link(rel="stylesheet", href="style.css")
+        title Aven E-Sport
+        link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
+        link(href="https://fonts.googleapis.com/css?family=Roboto:700|Ropa+Sans:400,400i&display=swap" rel="stylesheet")
+        script(src="app.js")
+    body
+        nav(data-state="closed")
+            .bar
+                a(href="/dist/"): img(src="../images/aven-title.png" alt="Aven")
+                button.icon#open-menu(onclick="switchNav()")
+                    i.material-icons menu
+            ul.links
+                li: a(href="/dist/a-propos.html") À propos
+                li: a(href="/dist/palmares.html") Palmarès
+                li: a(href="/dist/contact.html") Contact
+                li: a.btn.primary.small(href=discord_link) Rejoindre
+        block content

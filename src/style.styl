@@ -1,0 +1,184 @@
+phone_width = 748px
+tablet_width = 1012px
+phone = 'only screen and (max-width: ' + phone_width + ')'
+mobile = 'only screen and (max-width: ' + tablet_width + ')'
+desktop = 'only screen and (min-width: ' + (tablet_width + 1) + ')'
+aven-blue = #2C1969
+aven-cyan = #4493EB
+
+@media mobile
+    *[nomobile]
+        display: none
+
+no-outlines()
+    &::-moz-focus-inner
+        border: 0
+
+    -webkit-tap-highlight-color: transparent
+    outline: none
+
+:root
+    font-family: 'Ropa Sans', sans-serif
+
+body
+    overflow-x: hidden
+    margin: 0
+
+h1
+    margin: 0
+    text-align: center
+    font-size: 36px
+
+a
+    color: inherit
+    text-decoration: none
+    no-outlines()
+
+section:first-of-type:not(.landing)
+    margin-top: 60px
+
+section.landing
+    background: aven-blue url('../images/fortnite-bg-dimmed.jpg')
+    min-height: 100vh
+    width: 100vw
+    background-position: center center
+    background-repeat: no-repeat
+    background-size: cover
+    // --- childrens ---
+    display: flex
+    justify-content: center
+    align-items: center
+    color: #fff
+    flex-direction: column
+
+    h1 img
+        // height 200px
+        max-width: 80vw
+        width: 300px
+
+    p
+        font-size: 20px
+        margin-top: -10px
+
+nav
+    z-index: 10
+    background: #ffffff
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    height: 60px
+    box-shadow: 0px 8.08081px 80.8081px rgba(0, 0, 0, 0.1)
+    padding: 0 100px
+    transition: 0.25s height ease
+    // --- children ---
+    display: flex
+    align-items: center
+
+    img
+        height: 50px
+
+    .links
+        margin-left 25vw
+        font-size: 24px
+        list-style: none
+        display: flex
+
+        li:not(:last-child)
+            margin-right: 60px
+        a
+            font-weight bold
+
+    .links .btn
+        font-size: 18px
+
+    #open-menu
+        display: none
+
+    @media mobile
+        &[data-state='closed']
+            height: 50px
+
+        &[data-state='opened']
+            height: 100vh
+
+        overflow: hidden
+        flex-direction: column
+        padding: 0
+
+        img
+            height: 30px
+            margin-right: 50vw
+
+        #open-menu
+            text-align: right
+            display: block
+
+        .bar
+            padding: 10px 30px
+            align-items: center
+            display: flex
+
+        .links
+            margin-top: 150px
+            justify-content: flex-start
+            flex-direction: column
+            position: static
+
+            a
+                font-size: 36px
+
+            li:not(:last-child)
+                margin-bottom: 20px
+
+button.icon
+    background: transparent
+    border: none
+    no-outlines()
+
+.btn
+    text-transform: uppercase
+    font-family: Roboto
+    letter-spacing: 1px
+    font-weight: 600
+    no-outlines()
+    transition 0.25s color ease
+
+    &:not(.small)
+        padding: 15px 30px
+        font-size: 20px
+        border-radius: 7.5px
+
+    &.small
+        padding: 10px 20px
+        border-radius: 5px
+
+    &.secondary
+        &
+            background: #ffffff
+
+        &:not(:hover) .text
+            background: -webkit-linear-gradient(45deg, aven-blue, aven-cyan)
+            -webkit-background-clip: text
+            -webkit-text-fill-color: transparent
+
+    @keyframes btn-swirl
+        0%
+            background-position: 99% 0%
+
+        50%
+            background-position: 2% 100%
+
+        100%
+            background-position: 99% 0%
+
+    &.primary
+        animation: btn-swirl 7.5s ease infinite
+
+    &.secondary:hover, &.secondary:focus
+        animation: btn-swirl 2.5s ease infinite
+
+    &.primary, &.secondary:hover, &.secondary:focus
+        background: -webkit-linear-gradient(45deg, aven-blue, aven-cyan)
+        color: white
+        background-size: 200% 200%
