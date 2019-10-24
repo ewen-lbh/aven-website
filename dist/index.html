@@ -6,12 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <link rel="stylesheet" href="style.css"/>
     <title>Aven E-Sport</title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css?family=Roboto:700|Ropa+Sans:400,400i&amp;display=swap" rel="stylesheet"/>
+    <script src="linkify.js"></script>
     <script src="app.js"></script>
   </head>
   <body>
-    <nav data-state="closed">
+    <nav class="hidden" data-state="closed">
       <div class="bar"><a href="/dist/"><img src="../images/aven-title.png" alt="Aven"/></a>
         <button class="icon" id="open-menu" onclick="switchNav()"><i class="material-icons">menu</i></button>
       </div>
@@ -19,19 +20,23 @@
         <li><a href="/dist/a-propos.html">À propos</a></li>
         <li><a href="/dist/palmares.html">Palmarès</a></li>
         <li><a href="/dist/contact.html">Contact</a></li>
-        <li><a class="btn primary small" href="https://discord.gg/nQhzKes">Rejoindre</a></li>
+        <li><a class="btn primary small" href="https://discord.gg/Ck4GzC6">Rejoindre</a></li>
       </ul>
     </nav>
-    <section class="landing" data-parallax-speed="2">
+    <section class="landing" data-parallax-speed="6">
       <h1><img src="../images/aven-logotype-white.png" alt="Aven E-Sport"/></h1>
-      <p>Structure d’e-sport sous loi 1901</p><a class="btn secondary" href="https://discord.gg/nQhzKes"><span class="text">Rejoindre</span></a>
+      <p>Structure d’e-sport sous loi 1901</p><a class="btn secondary" href="https://discord.gg/Ck4GzC6"><span class="text">Rejoindre</span></a>
     </section>
     <hr class="aven-sep"/>
     <section>
       <h2>Actualités</h2>
-      <ul class="cards">
-        <li> </li>
-      </ul>
+      <div class="centered">
+        <div class="loading-discord-messages">Chargement...</div>
+      </div>
+      <ul class="cards"></ul>
+      <div class="centered"><a class="btn secondary" href="https://discord.gg/Ck4GzC6"><span class="text">Plus de news</span></a></div>
     </section>
   </body>
+  <hr class="footer-sep"/>
+  <footer>Site réalisé par <a href="https://mx3creations.com/">Mx3</a>, open source, disponible <a href="https://github.com/ewen-lbh/aven-website">sur GitHub</a><br/>Fièrement non-propulsé par WordPress, mais codé à la main</footer>
 </html>

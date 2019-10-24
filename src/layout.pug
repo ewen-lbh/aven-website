@@ -1,24 +1,34 @@
 <!DOCTYPE html>
-- var discord_link = "https://discord.gg/nQhzKes"
+- var discord_link = "https://discord.gg/Ck4GzC6"
 html(lang="en")
-    head
-        meta(charset="UTF-8")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        meta(http-equiv="X-UA-Compatible", content="ie=edge")
-        link(rel="stylesheet", href="style.css")
-        title Aven E-Sport
-        link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
-        link(href="https://fonts.googleapis.com/css?family=Roboto:700|Ropa+Sans:400,400i&display=swap" rel="stylesheet")
-        script(src="app.js")
-    body
-        nav(data-state="closed")
-            .bar
-                a(href="/dist/"): img(src="../images/aven-title.png" alt="Aven")
-                button.icon#open-menu(onclick="switchNav()")
-                    i.material-icons menu
-            ul.links
-                li: a(href="/dist/a-propos.html") À propos
-                li: a(href="/dist/palmares.html") Palmarès
-                li: a(href="/dist/contact.html") Contact
-                li: a.btn.primary.small(href=discord_link) Rejoindre
-        block content
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		meta(http-equiv="X-UA-Compatible", content="ie=edge")
+		link(rel="stylesheet", href="style.css")
+		title Aven E-Sport
+		link(href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined" rel="stylesheet")
+		link(href="https://fonts.googleapis.com/css?family=Roboto:700|Ropa+Sans:400,400i&display=swap" rel="stylesheet")
+		script(src="linkify.js")
+		script(src="app.js")
+	body
+		nav(data-state="closed").hidden
+			.bar
+				a(href="/dist/"): img(src="../images/aven-title.png" alt="Aven")
+				button.icon#open-menu(onclick="switchNav()")
+					i.material-icons menu
+			ul.links
+				li: a(href="/dist/a-propos.html") À propos
+				li: a(href="/dist/palmares.html") Palmarès
+				li: a(href="/dist/contact.html") Contact
+				li: a.btn.primary.small(href=discord_link) Rejoindre
+		block content
+
+	hr.footer-sep
+	footer
+		| Site réalisé par 
+		a(href="https://mx3creations.com/") Mx3
+		| , open source, disponible 
+		a(href="https://github.com/ewen-lbh/aven-website") sur GitHub
+		br
+		| Fièrement non-propulsé par WordPress, mais codé à la main

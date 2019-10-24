@@ -1,7 +1,7 @@
 extends layout.pug
 
 block content
-    section.landing(data-parallax-speed="2")
+    section.landing(data-parallax-speed="6")
         h1: img(src="../images/aven-logotype-white.png" alt="Aven E-Sport")
         p Structure d’e-sport sous loi 1901
         a.btn.secondary(href=discord_link)
@@ -9,5 +9,81 @@ block content
     hr.aven-sep
     section
         h2 Actualités
+        .centered: .loading-discord-messages Chargement...
         ul.cards
-            li 
+            //-
+                li.card
+                    .card-content
+                        .card-content-inner
+                            ul.top-infos
+                                li.author RouxMin
+                                li.date.today Aujourd'hui, 18:20
+                            p.text.
+                                Le Site est en cours de développement ! 
+                                Merci à #[a(href="https://mx3creations.com") Mx3] ! 
+
+                                Des Nouvelles vous seront fournis tout au long du Développement !
+                li.card
+                    .card-content
+                        .card-content-inner
+                            ul.top-infos
+                                li.author Virtual
+                                li.date 22/09/2019
+                            p.text.
+                                Bienvenue à #[a(href="#") kulyyyy] en tant que joueur dans la Aven !
+                li.card
+                    .card-content
+                        .card-content-inner
+                            ul.top-infos
+                                li.author RouxMin
+                                li.date 21/09/2019
+                            p.text.
+                                Bonjour , je souhaite savoir qui viendra au Tournois le 12 octobre sur Nîmes , Merci de donner une réponse fiable . 
+                        ul.poll-results
+                            li.poll-result
+                                i.material-icons check
+                                span.poll-results-count 006
+                            li.poll-result
+                                i.material-icons close
+                                span.poll-results-count 004
+                            li.infos
+                                a(href=discord_link title="Allez sur discord pour voter"): i.material-icons-outlined info_outline
+                li.card
+                    .card-content
+                        .card-content-inner
+                            ul.top-infos
+                                li.author Virtual
+                                li.date 19/09/2019
+                            p.text.
+                                Il y auras une réunion ce samedi à 14h, pas d’absent possible à part pour une grosse raison, la structure vas essayer d’aller de l’avant et que tout le monde y mettent du sien et à fond. En cas de problème mp #[a(href="#") SI0wn] qui est fort sympathique. Il vous répondra avec joie.
+                li.card
+                    .card-content
+                        .card-content-inner
+                            ul.top-infos
+                                li.author RouxMin
+                                li.date 11/09/2019
+                            p.text.
+                                Merci de tous vous rendre sur le discord STAFF afin d’envoyer vos perfs
+
+
+                li.card
+                    .card-content
+                        .card-content-inner
+                            ul.top-infos
+                                li.author RouxMin
+                                li.date 11/09/2019
+                            p.text.
+                                Fermeture du Channel Général AVEN !
+                                Celui-ci est maintenant sur le Discord STAFF , privé AVEN .
+
+                                A partir de maintenant toute communication se fera sur le Discord STAFF .
+
+                                Discord STAFF : 
+                            ul.discord-servers
+                                li.discord-server
+                                    img(href="#lol").server-image
+                                    span.server-name Aven Staff
+                                    span.members-count 16 Membres
+                                    a(href="#mdr").btn.btn-secondary: span.text Rejoindre
+
+        .centered: a(href=discord_link).btn.secondary: span.text Plus de news

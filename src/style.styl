@@ -7,178 +7,293 @@ aven-blue = #2C1969
 aven-cyan = #4493EB
 
 @media mobile
-    *[nomobile]
-        display: none
+	*[nomobile]
+		display: none
 
 no-outlines()
-    &::-moz-focus-inner
-        border: 0
+	&::-moz-focus-inner
+		border: 0
 
-    -webkit-tap-highlight-color: transparent
-    outline: none
+	-webkit-tap-highlight-color: transparent
+	outline: none
+
+gradient-text()
+	background: -webkit-linear-gradient(45deg, aven-blue, aven-cyan)
+	-webkit-background-clip: text
+	-webkit-text-fill-color: transparent
+
+.centered
+	display flex
+	justify-content center
 
 :root
-    font-family: 'Ropa Sans', sans-serif
+	font-family: 'Ropa Sans', sans-serif
 
 body
-    overflow-x: hidden
-    margin: 0
+	overflow-x: hidden
+	margin: 0
 
 h1
-    margin: 0
-    text-align: center
-    font-size: 36px
+h2
+	margin: 0
+	text-align: center
+	font-size: 36px
+	color: aven-blue
+h2
+	margin-bottom 30px
+
+hr.aven-sep
+	border: 0
+	margin-top -30px
+	height 60px
+	background-image: url('../images/aven-logo-all-black-upside-down.png')
+	background-size contain
+	background-repeat no-repeat
+	background-position center center
 
 a
-    color: inherit
-    text-decoration: none
-    no-outlines()
+	color: inherit
+	text-decoration: none
+	no-outlines()
 
 section:first-of-type:not(.landing)
-    margin-top: 60px
+	margin-top: 60px
 
 section.landing
-    background: aven-blue url('../images/fortnite-bg-dimmed.jpg')
-    min-height: 100vh
-    width: 100vw
-    background-position: center center
-    background-repeat: no-repeat
-    background-size: cover
-    // --- childrens ---
-    display: flex
-    justify-content: center
-    align-items: center
-    color: #fff
-    flex-direction: column
+	background: aven-blue url('../images/fortnite-bg-dimmed.jpg')
+	min-height: 100vh
+	width: 100vw
+	background-position: center center
+	background-repeat: no-repeat
+	background-size: cover
+	// --- childrens ---
+	display: flex
+	justify-content: center
+	align-items: center
+	color: #fff
+	flex-direction: column
 
-    h1 img
-        // height 200px
-        max-width: 80vw
-        width: 300px
+	h1 img
+		// height 200px
+		max-width: 80vw
+		width: 300px
 
-    p
-        font-size: 20px
-        margin-top: -10px
+	p
+		font-size: 20px
+		margin-top: -10px
+
+body
+	min-height: 100vh
+footer
+	padding 30px
+	padding-top 0
+	text-align center
+	a
+		color aven-cyan
+hr.footer-sep
+	width 50%
+	border: 2px solid #aaaaaa
+	border-radius: 2px
+	margin-bottom 15px
+	margin-top 80px
 
 nav
-    z-index: 10
-    background: #ffffff
-    position: fixed
-    top: 0
-    left: 0
-    right: 0
-    height: 60px
-    box-shadow: 0px 8.08081px 80.8081px rgba(0, 0, 0, 0.1)
-    padding: 0 100px
-    transition: 0.25s height ease
-    // --- children ---
-    display: flex
-    align-items: center
+	z-index: 10
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	height: 60px
+	padding: 0 100px
+	background: #ffffff
+	box-shadow: 0px 8.08081px 80.8081px rgba(0, 0, 0, 0.1)
+	&.transparent
+		background transparent
+		color white
+		box-shadow: none
+	&.hidden
+		top -90px
+	transition: 0.25s all ease
+	// --- children ---
+	display: flex
+	align-items: center
 
-    img
-        height: 50px
+	img
+		height: 50px
 
-    .links
-        margin-left 25vw
-        font-size: 24px
-        list-style: none
-        display: flex
+	.links
+		@media desktop
+			margin-left auto
+		@media mobile
+			margin-left 0
+		font-size: 24px
+		list-style: none
+		display: flex
 
-        li:not(:last-child)
-            margin-right: 60px
-        a
-            font-weight bold
+		li:not(:last-child)
+			margin-right: 60px
 
-    .links .btn
-        font-size: 18px
+		a
+			font-weight: bold
 
-    #open-menu
-        display: none
+	.links .btn
+		font-size: 18px
 
-    @media mobile
-        &[data-state='closed']
-            height: 50px
+	#open-menu
+		display: none
 
-        &[data-state='opened']
-            height: 100vh
+	@media mobile
+		&[data-state='closed']
+			height: 80px
 
-        overflow: hidden
-        flex-direction: column
-        padding: 0
+		&[data-state='opened']
+			height: 100vh
 
-        img
-            height: 30px
-            margin-right: 50vw
+		overflow: hidden
+		flex-direction: column
+		padding: 0
 
-        #open-menu
-            text-align: right
-            display: block
+		img
+			height: 35px
+			margin-right: 50vw
 
-        .bar
-            padding: 10px 30px
-            align-items: center
-            display: flex
+		#open-menu
+			i
+				font-size 35px
+			text-align: right
+			display: block
 
-        .links
-            margin-top: 150px
-            justify-content: flex-start
-            flex-direction: column
-            position: static
+		.bar
+			align-items: center
+			display: flex
+			min-height: 80px
 
-            a
-                font-size: 36px
+		.links
+			justify-content: flex-start
+			flex-direction: column
+			position: static
 
-            li:not(:last-child)
-                margin-bottom: 20px
+			a
+				font-size: 36px
+
+			li:not(:last-child)
+				margin-bottom: 20px
 
 button.icon
-    background: transparent
-    border: none
-    no-outlines()
+	background: transparent
+	border: none
+	no-outlines()
 
 .btn
-    text-transform: uppercase
-    font-family: Roboto
-    letter-spacing: 1px
-    font-weight: 600
-    no-outlines()
-    transition 0.25s color ease
+	text-transform: uppercase
+	font-family: Roboto
+	letter-spacing: 1px
+	font-weight: 600
+	no-outlines()
+	transition: 0.25s color ease
 
-    &:not(.small)
-        padding: 15px 30px
-        font-size: 20px
-        border-radius: 7.5px
+	&:not(.small)
+		padding: 15px 30px
+		font-size: 20px
+		border-radius: 7.5px
 
-    &.small
-        padding: 10px 20px
-        border-radius: 5px
+	&.small
+		padding: 10px 20px
+		border-radius: 5px
 
-    &.secondary
-        &
-            background: #ffffff
+	&.secondary
+		&
+			background: #ffffff
 
-        &:not(:hover) .text
-            background: -webkit-linear-gradient(45deg, aven-blue, aven-cyan)
-            -webkit-background-clip: text
-            -webkit-text-fill-color: transparent
+		&:not(:hover) .text
+			gradient-text()
 
-    @keyframes btn-swirl
-        0%
-            background-position: 99% 0%
+	@keyframes btn-swirl
+		0%
+			background-position: 99% 0%
 
-        50%
-            background-position: 2% 100%
+		50%
+			background-position: 2% 100%
 
-        100%
-            background-position: 99% 0%
+		100%
+			background-position: 99% 0%
 
-    &.primary
-        animation: btn-swirl 7.5s ease infinite
+	&.primary
+		animation: btn-swirl 7.5s ease infinite
 
-    &.secondary:hover, &.secondary:focus
-        animation: btn-swirl 2.5s ease infinite
+	&.secondary:hover, &.secondary:focus
+		animation: btn-swirl 2.5s ease infinite
 
-    &.primary, &.secondary:hover, &.secondary:focus
-        background: -webkit-linear-gradient(45deg, aven-blue, aven-cyan)
-        color: white
-        background-size: 200% 200%
+	&.primary, &.secondary:hover, &.secondary:focus
+		background: -webkit-linear-gradient(45deg, aven-blue, aven-cyan)
+		color: white
+		background-size: 200% 200%
+
+.loading-discord-messages
+	font-size 36px
+	padding: 50px
+
+.cards
+	max-width: 1300px
+	margin 0 auto
+	padding 0 25px
+	display: grid
+	grid-gap: 20px
+	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr))
+	grid-auto-rows: 250px
+
+	ul
+		padding-left: 0
+	&, ul
+		list-style: none
+
+.card
+	height: 100%
+.card-content
+	display: block
+	background: #FFFFFF
+	box-shadow: 0px 6.19534px 24.7813px rgba(0, 0, 0, 0.1)
+	border-radius: 12.3907px
+	.card-content-inner
+		padding: 20px
+	.top-infos
+		display flex
+		align-items center
+	.author
+		opacity 0.5
+	.date
+		margin-left auto
+		font-size 1.2em
+		&.today
+			font-weight bold
+			color aven-blue
+	.text a
+	.text .discord-username
+		color: aven-cyan
+		opacity 1
+		transition: opacity 0.125s ease
+		&:hover
+			opacity 0.75
+	.text a
+		text-decoration underline
+	.poll-results
+		padding 10px
+		border-bottom-left-radius: 12.3907px
+		border-bottom-right-radius: 12.3907px
+		background linear-gradient(35deg, aven-blue, aven-cyan)
+		color white
+		display flex
+		li, li a
+			display flex
+			align-items center
+			&:not(:last-child)
+				margin-right 15px
+		.poll-result i
+			font-size 2.2em
+		.poll-results-count
+			font-family Roboto Mono, monospace
+		li.infos
+			margin-left auto
+			width 30px
+			a:not(:hover)
+				opacity 0.75
